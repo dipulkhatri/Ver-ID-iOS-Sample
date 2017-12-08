@@ -98,7 +98,6 @@ Following are the exact steps your application should take to register a user.
     } else {
         // The call failed
     }
-}
 	~~~
 1. If the user is already registered authenticate her/him before registering new faces. See <a href="#authentication">Authentication</a>.
 1. Create registration settings.
