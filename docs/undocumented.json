@@ -30,21 +30,21 @@
     },
     {
       "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
-      "line": 520,
+      "line": 514,
       "symbol": "VerID.profilePictureURL(userId:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
-      "line": 806,
+      "line": 802,
       "symbol": "EulerAngleF",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
-      "line": 1106,
+      "line": 1102,
       "symbol": "VerIDAntiSpoofingMethod.bearing",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"

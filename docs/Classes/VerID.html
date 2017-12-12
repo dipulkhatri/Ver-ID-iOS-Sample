@@ -869,9 +869,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:callback:"></a>
-                    <a name="//apple_ref/swift/Method/detectFaceInImage(_:keepForRecognition:callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:callback:">detectFaceInImage(_:keepForRecognition:callback:)</a>
+                    <a name="/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:withStrictBearingMatching:callback:"></a>
+                    <a name="//apple_ref/swift/Method/detectFaceInImage(_:keepForRecognition:withStrictBearingMatching:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:withStrictBearingMatching:callback:">detectFaceInImage(_:keepForRecognition:withStrictBearingMatching:callback:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -886,7 +886,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">detectFaceInImage</span><span class="p">(</span><span class="n">_</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">keepForRecognition</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">face</span><span class="p">:</span> <span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">detectFaceInImage</span><span class="p">(</span><span class="n">_</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">keepForRecognition</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">withStrictBearingMatching</span> <span class="nv">strictBearingMatching</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">face</span><span class="p">:</span> <span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -915,6 +915,18 @@
                               <td>
                                 <div>
                                   <p>Set to <code>false</code> unless you are planning to use the face for operations that require face recognition like registration or authentication.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>strictBearingMatching</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Set to <code>true</code> if you anticipate using the face for face recognition where the face must match the bearing of the registered face. This is used for example in sessions that use <code>strict</code> liveness detection level.</p>
                                 </div>
                               </td>
                             </tr>
@@ -939,9 +951,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:error:"></a>
-                    <a name="//apple_ref/swift/Method/detectFaceInImage(_:keepForRecognition:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:error:">detectFaceInImage(_:keepForRecognition:)</a>
+                    <a name="/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:withStrictBearingMatching:error:"></a>
+                    <a name="//apple_ref/swift/Method/detectFaceInImage(_:keepForRecognition:withStrictBearingMatching:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerID(im)detectFaceInImage:keepForRecognition:withStrictBearingMatching:error:">detectFaceInImage(_:keepForRecognition:withStrictBearingMatching:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -961,7 +973,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">detectFaceInImage</span><span class="p">(</span><span class="n">_</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">keepForRecognition</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">detectFaceInImage</span><span class="p">(</span><span class="n">_</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">keepForRecognition</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">withStrictBearingMatching</span> <span class="nv">strictBearingMatching</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span></code></pre>
 
                         </div>
                       </div>
@@ -990,6 +1002,18 @@
                               <td>
                                 <div>
                                   <p>Set to <code>false</code> unless you are planning to use the face for operations that require face recognition like registration or authentication.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>strictBearingMatching</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Set to <code>true</code> if you anticipate using the face for face recognition where the face must match the bearing of the registered face. This is used for example in sessions that use <code>strict</code> liveness detection level.</p>
                                 </div>
                               </td>
                             </tr>
