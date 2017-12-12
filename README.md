@@ -353,7 +353,7 @@ Discard the faces used for authentication. Keep the faces that were used for reg
 VerID.shared.discardFaces([face])
 ~~~
 
-<!--## Documentation
+## Documentation
 
-Full API documentation is available on the project's [Github page](https://appliedrecognition.github.io/Ver-ID-iOS-Sample/com.appliedrec.ver_id.VerID.html).-->
+Full API documentation is available on the project's [Github page](https://appliedrecognition.github.io/Ver-ID-iOS-Sample/Classes/VerID.html).
 
