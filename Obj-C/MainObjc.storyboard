@@ -53,159 +53,6 @@
             </objects>
             <point key="canvasLocation" x="364" y="152"/>
         </scene>
-        <!--Ver-ID Sample-->
-        <scene sceneID="omz-Tn-ZAc">
-            <objects>
-                <viewController storyboardIdentifier="start" id="l0T-T6-quC" customClass="MainViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ghw-8A-lZU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-YR-Lj3">
-                                <rect key="frame" x="0.0" y="64" width="375" height="301.5"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcN-b3-n5D">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDM-bQ-yMW">
-                                        <rect key="frame" x="8" y="8" width="359" height="286"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="This app demonstrates how Ver-ID performs two common user authentication tasks. ">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="SFUIText-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" Registration ">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="SFUIText-Semibold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="The app collects images of your face and stores them as templates.  ">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="SFUIText-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Authentication">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="SFUIText-Semibold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" The app captures images of you and verifies them against the templates collected at registration.">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="15" name="SFUIText-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="XDM-bQ-yMW" secondAttribute="bottom" id="16C-g3-A4A"/>
-                                    <constraint firstAttribute="trailing" secondItem="mcN-b3-n5D" secondAttribute="trailing" id="285-2L-RRd"/>
-                                    <constraint firstAttribute="bottom" secondItem="mcN-b3-n5D" secondAttribute="bottom" id="SCO-bl-7dD"/>
-                                    <constraint firstItem="XDM-bQ-yMW" firstAttribute="top" secondItem="IzO-YR-Lj3" secondAttribute="topMargin" id="Xaj-IF-SGc"/>
-                                    <constraint firstItem="XDM-bQ-yMW" firstAttribute="leading" secondItem="IzO-YR-Lj3" secondAttribute="leadingMargin" id="f4g-8w-0y5"/>
-                                    <constraint firstItem="mcN-b3-n5D" firstAttribute="top" secondItem="IzO-YR-Lj3" secondAttribute="top" id="ige-aV-6Al"/>
-                                    <constraint firstItem="mcN-b3-n5D" firstAttribute="leading" secondItem="IzO-YR-Lj3" secondAttribute="leading" id="keF-C7-tbK"/>
-                                    <constraint firstItem="XDM-bQ-yMW" firstAttribute="trailing" secondItem="IzO-YR-Lj3" secondAttribute="trailingMargin" id="sCM-Kx-rue"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-fO-ril">
-                                <rect key="frame" x="0.0" y="365.5" width="375" height="301.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="HUd-ia-DBR">
-                                        <rect key="frame" x="129.5" y="97" width="117" height="108"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDV-aq-wBN">
-                                                <rect key="frame" x="0.0" y="0.0" width="117" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <state key="normal" title="Register"/>
-                                                <connections>
-                                                    <action selector="registerFaces:" destination="l0T-T6-quC" eventType="touchUpInside" id="Um7-3q-92n"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFy-8o-2tZ">
-                                                <rect key="frame" x="0.0" y="70" width="117" height="38"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <state key="normal" title="Authenticate"/>
-                                                <connections>
-                                                    <action selector="authenticate:" destination="l0T-T6-quC" eventType="touchUpInside" id="mK0-Ya-NfL"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="HUd-ia-DBR" firstAttribute="centerX" secondItem="3oi-fO-ril" secondAttribute="centerX" id="Dec-4s-3Zj"/>
-                                    <constraint firstItem="HUd-ia-DBR" firstAttribute="centerY" secondItem="3oi-fO-ril" secondAttribute="centerY" id="rOZ-Up-bhC"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="3oi-fO-ril" firstAttribute="leading" secondItem="hTH-s5-RlZ" secondAttribute="leading" id="4FG-BF-eaJ"/>
-                            <constraint firstItem="3oi-fO-ril" firstAttribute="top" secondItem="hTH-s5-RlZ" secondAttribute="top" id="5S9-iE-q7l"/>
-                            <constraint firstItem="3oi-fO-ril" firstAttribute="trailing" secondItem="hTH-s5-RlZ" secondAttribute="trailing" id="5nt-ri-UEQ"/>
-                            <constraint firstItem="IzO-YR-Lj3" firstAttribute="leading" secondItem="hTH-s5-RlZ" secondAttribute="leading" id="Bfw-QH-P73"/>
-                            <constraint firstItem="IzO-YR-Lj3" firstAttribute="top" secondItem="hTH-s5-RlZ" secondAttribute="top" id="J9l-RK-3U0"/>
-                            <constraint firstItem="IzO-YR-Lj3" firstAttribute="width" secondItem="hTH-s5-RlZ" secondAttribute="width" multiplier="0.5" id="RDo-i2-zTa"/>
-                            <constraint firstItem="IzO-YR-Lj3" firstAttribute="trailing" secondItem="hTH-s5-RlZ" secondAttribute="trailing" id="S3J-1f-ZNl"/>
-                            <constraint firstItem="3oi-fO-ril" firstAttribute="leading" secondItem="IzO-YR-Lj3" secondAttribute="trailing" id="SDY-3h-6St"/>
-                            <constraint firstItem="IzO-YR-Lj3" firstAttribute="height" secondItem="hTH-s5-RlZ" secondAttribute="height" multiplier="0.5" id="YRN-Ph-bEI"/>
-                            <constraint firstAttribute="bottom" secondItem="3oi-fO-ril" secondAttribute="bottom" id="aFQ-Pa-sQW"/>
-                            <constraint firstItem="hTH-s5-RlZ" firstAttribute="bottom" secondItem="IzO-YR-Lj3" secondAttribute="bottom" id="gCq-NF-gbN"/>
-                            <constraint firstItem="3oi-fO-ril" firstAttribute="top" secondItem="IzO-YR-Lj3" secondAttribute="bottom" id="ueL-aQ-heW"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="hTH-s5-RlZ"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="gCq-NF-gbN"/>
-                                <exclude reference="RDo-i2-zTa"/>
-                                <exclude reference="5S9-iE-q7l"/>
-                                <exclude reference="SDY-3h-6St"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <include reference="gCq-NF-gbN"/>
-                                <include reference="RDo-i2-zTa"/>
-                                <exclude reference="S3J-1f-ZNl"/>
-                                <exclude reference="YRN-Ph-bEI"/>
-                                <exclude reference="4FG-BF-eaJ"/>
-                                <include reference="5S9-iE-q7l"/>
-                                <include reference="SDY-3h-6St"/>
-                                <exclude reference="ueL-aQ-heW"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Ver-ID Sample" id="Lnj-Ik-Fau">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="n9f-hS-xGU"/>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="authenticateButton" destination="qFy-8o-2tZ" id="Md1-2F-CfF"/>
-                        <outlet property="imageView" destination="mcN-b3-n5D" id="SUH-md-UEf"/>
-                        <outlet property="registerButton" destination="JDV-aq-wBN" id="otf-fz-jvJ"/>
-                        <outlet property="textView" destination="XDM-bQ-yMW" id="xeL-3q-yVE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XWT-uh-VvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1066" y="152"/>
-        </scene>
         <!--Error-->
         <scene sceneID="vcS-0g-RiN">
             <objects>
@@ -251,6 +98,267 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zh9-UA-GzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="847"/>
+        </scene>
+        <!--Ver-ID Sample-->
+        <scene sceneID="E0W-7p-uUe">
+            <objects>
+                <viewController storyboardIdentifier="start" id="aLw-7g-YcI" customClass="MainViewController" customModule="VerIDSampleObjc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JYa-Dg-G6x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfv-DB-hBb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="362"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-bB-qzW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="362"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfK-e0-9oZ">
+                                        <rect key="frame" x="16" y="16" width="343" height="338"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="This app demonstrates how Ver-ID performs two common user authentication tasks. ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="15" name="SFUIText-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="SFUIText-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Registration">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="SFUIText-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="SFUIText-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="The app collects images of your face and stores them as templates.  ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="15" name="SFUIText-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Authentication">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="SFUIText-Bold"/>
+                                                    <font key="NSOriginalFont" size="17" name="SFUIText-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="SFUIText-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" The app captures images of you and verifies them against the templates collected at registration.">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="15" name="SFUIText-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <attributedString key="attributedText">
+                                                <fragment content="This app demonstrates how Ver-ID performs two common user authentication tasks.">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="20" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="   ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="21" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Registration">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="25" name="SFUIText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="25" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="21" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="The app collects images of your face and stores them as templates.">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="20" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="   ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="21" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Authentication">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="25" name="SFUIText-Bold"/>
+                                                        <font key="NSOriginalFont" size="25" name="SFUIText-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="25" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="21" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="The app captures images of you and verifies them against the templates collected at registration.">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="20" name="SFUIText-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </variation>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oTr-bB-qzW" secondAttribute="trailing" id="71g-Mv-jzI"/>
+                                    <constraint firstItem="kfK-e0-9oZ" firstAttribute="leading" secondItem="Zfv-DB-hBb" secondAttribute="leadingMargin" id="I6d-mH-Tvf"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="kfK-e0-9oZ" secondAttribute="bottom" id="SfU-V0-vfH"/>
+                                    <constraint firstItem="kfK-e0-9oZ" firstAttribute="top" secondItem="Zfv-DB-hBb" secondAttribute="topMargin" id="UgY-oi-zxj"/>
+                                    <constraint firstAttribute="bottom" secondItem="oTr-bB-qzW" secondAttribute="bottom" id="lA5-FU-D2O"/>
+                                    <constraint firstItem="oTr-bB-qzW" firstAttribute="top" secondItem="Zfv-DB-hBb" secondAttribute="top" id="noJ-US-ifw"/>
+                                    <constraint firstItem="kfK-e0-9oZ" firstAttribute="trailing" secondItem="Zfv-DB-hBb" secondAttribute="trailingMargin" id="oyW-UZ-LNP"/>
+                                    <constraint firstItem="oTr-bB-qzW" firstAttribute="leading" secondItem="Zfv-DB-hBb" secondAttribute="leading" id="tkd-pB-k5C"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="16" left="16" bottom="8" right="16"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <edgeInsets key="layoutMargins" top="24" left="24" bottom="24" right="24"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUQ-rW-ebA">
+                                <rect key="frame" x="0.0" y="426" width="375" height="241"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ewK-y7-EFM">
+                                        <rect key="frame" x="129.5" y="66.5" width="117" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-Kl-hmT">
+                                                <rect key="frame" x="0.0" y="0.0" width="117" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <action selector="registerFaces:" destination="aLw-7g-YcI" eventType="touchUpInside" id="oAl-py-39f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1I-uF-cjZ">
+                                                <rect key="frame" x="0.0" y="70" width="117" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" title="Authenticate"/>
+                                                <connections>
+                                                    <action selector="authenticate:" destination="aLw-7g-YcI" eventType="touchUpInside" id="Zz6-wd-Tdx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ewK-y7-EFM" firstAttribute="centerY" secondItem="hUQ-rW-ebA" secondAttribute="centerY" id="Asj-Ee-OWF"/>
+                                    <constraint firstItem="ewK-y7-EFM" firstAttribute="centerX" secondItem="hUQ-rW-ebA" secondAttribute="centerX" id="Hpr-4f-kMY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hUQ-rW-ebA" firstAttribute="top" secondItem="HEh-iQ-ial" secondAttribute="top" id="1F3-6x-wOz"/>
+                            <constraint firstItem="HEh-iQ-ial" firstAttribute="bottom" secondItem="Zfv-DB-hBb" secondAttribute="bottom" id="Ach-ft-KvB"/>
+                            <constraint firstItem="Zfv-DB-hBb" firstAttribute="width" secondItem="HEh-iQ-ial" secondAttribute="width" multiplier="0.5" id="IeE-AL-mNv"/>
+                            <constraint firstItem="Zfv-DB-hBb" firstAttribute="top" secondItem="HEh-iQ-ial" secondAttribute="top" id="XMt-j8-H4H"/>
+                            <constraint firstAttribute="bottom" secondItem="hUQ-rW-ebA" secondAttribute="bottom" id="YiD-eW-Sq4"/>
+                            <constraint firstItem="Zfv-DB-hBb" firstAttribute="leading" secondItem="HEh-iQ-ial" secondAttribute="leading" id="d5N-2I-z8b"/>
+                            <constraint firstItem="hUQ-rW-ebA" firstAttribute="top" secondItem="Zfv-DB-hBb" secondAttribute="bottom" id="dpH-Ns-2va"/>
+                            <constraint firstItem="hUQ-rW-ebA" firstAttribute="leading" secondItem="Zfv-DB-hBb" secondAttribute="trailing" id="hBa-eo-vlA"/>
+                            <constraint firstItem="Zfv-DB-hBb" firstAttribute="trailing" secondItem="HEh-iQ-ial" secondAttribute="trailing" id="lln-7E-eRL"/>
+                            <constraint firstItem="hUQ-rW-ebA" firstAttribute="leading" secondItem="HEh-iQ-ial" secondAttribute="leading" id="o2S-bB-lg5"/>
+                            <constraint firstItem="Zfv-DB-hBb" firstAttribute="height" secondItem="HEh-iQ-ial" secondAttribute="height" multiplier="0.6" id="pjQ-4z-E9M"/>
+                            <constraint firstItem="hUQ-rW-ebA" firstAttribute="trailing" secondItem="HEh-iQ-ial" secondAttribute="trailing" id="qcr-LF-yfc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HEh-iQ-ial"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ach-ft-KvB"/>
+                                <exclude reference="IeE-AL-mNv"/>
+                                <exclude reference="1F3-6x-wOz"/>
+                                <exclude reference="hBa-eo-vlA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="Ach-ft-KvB"/>
+                                <include reference="IeE-AL-mNv"/>
+                                <exclude reference="lln-7E-eRL"/>
+                                <exclude reference="pjQ-4z-E9M"/>
+                                <exclude reference="o2S-bB-lg5"/>
+                                <include reference="1F3-6x-wOz"/>
+                                <include reference="hBa-eo-vlA"/>
+                                <exclude reference="dpH-Ns-2va"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ver-ID Sample" id="its-4V-fBb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Hk6-Fo-TRY"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="authenticateButton" destination="R1I-uF-cjZ" id="Gut-61-S3U"/>
+                        <outlet property="imageView" destination="oTr-bB-qzW" id="vJl-Rs-cJn"/>
+                        <outlet property="registerButton" destination="fl0-Kl-hmT" id="JoV-zK-KFO"/>
+                        <outlet property="textView" destination="kfK-e0-9oZ" id="x0A-dh-48Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oF-8z-hig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065.625" y="151.7578125"/>
         </scene>
     </scenes>
 </document>

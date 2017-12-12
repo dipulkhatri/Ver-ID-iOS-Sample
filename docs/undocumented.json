@@ -1,0 +1,110 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/Smoothing.swift",
+      "line": 11,
+      "symbol": "Smoothing",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/Smoothing.swift",
+      "line": 46,
+      "symbol": "CGFloatSmoothing",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/Smoothing.swift",
+      "line": 59,
+      "symbol": "CGRectSmoothing",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
+      "line": 54,
+      "symbol": "VerID.loadError",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
+      "line": 520,
+      "symbol": "VerID.profilePictureURL(userId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
+      "line": 806,
+      "symbol": "EulerAngleF",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerID.swift",
+      "line": 1106,
+      "symbol": "VerIDAntiSpoofingMethod.bearing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDDebugSession.swift",
+      "line": 11,
+      "symbol": "VerIDDebugSession",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDFace.swift",
+      "line": 31,
+      "symbol": "VerIDFace.template",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDFace.swift",
+      "line": 93,
+      "symbol": "VerIDFace.matchesBearing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDSessionSettings.swift",
+      "line": 47,
+      "symbol": "VerIDLivenessDetectionSessionSettings.includeFaceTemplatesInResult",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDSessionSettings.swift",
+      "line": 59,
+      "symbol": "VerIDAuthenticationSessionSettings.isIndefinite",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDSessionSettings.swift",
+      "line": 61,
+      "symbol": "VerIDAuthenticationSessionSettings.antiSpoofingMethods",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDSessionSettings.swift",
+      "line": 63,
+      "symbol": "VerIDAuthenticationSessionSettings.init(antiSpoofing:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID/Ver-ID/VerIDSessionSettings.swift",
+      "line": 131,
+      "symbol": "VerIDRegistrationSessionSettings.init(antiSpoofing:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/jakub/Documents/Fotobounce/source/trunk/ios/Ver-ID"
+}

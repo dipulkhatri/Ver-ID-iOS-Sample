@@ -189,6 +189,17 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wnullability"
 
 SWIFT_MODULE_NAMESPACE_PUSH("VerID")
+enum VerIDBearing : NSInteger;
+
+SWIFT_CLASS("_TtC5VerID11EulerAngleF")
+@interface EulerAngleF : NSObject
+@property (nonatomic) float yaw;
+@property (nonatomic) float pitch;
+@property (nonatomic) float roll;
+@property (nonatomic, readonly) enum VerIDBearing bearing;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
 @class UIImage;
 @class FBFace;
 @class PHAsset;
@@ -234,40 +245,41 @@ SWIFT_CLASS("_TtC5VerID25StillCameraViewController")
 
 
 
-enum SecurityLevel : NSInteger;
+enum VerIDSecurityLevel : NSInteger;
 @class VerIDUser;
+@class VerIDFace;
 
 /// Provides access to essential Ver-ID functions.
 SWIFT_CLASS("_TtC5VerID5VerID")
 @interface VerID : NSObject
-/// Shared instance of Ver-ID.
+/// Shared instance of Ver-ID
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VerID * _Nonnull shared;)
 + (VerID * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @property (nonatomic, readonly) NSError * _Nullable loadError;
 /// Load Ver-ID and its resources and authenticate the client app.
 /// note:
-/// Apps running the demo framework (VerIDDemo.framework) may also set the apiSecret in their Info.plist file and omit the <code>apiSecret</code> parameter.
+/// It’s best practice to set the API secret in your Info.plist file and leave the <code>apiSecret</code> parameter <code>nil</code>.
 /// seealso:
 /// <code>unload()</code>
-/// \param apiSecret Must not be nil if your app is running the demo version of the framework (VerIDDemo.framework).
+/// \param apiSecret Ver-ID API secret. Overrides API secret set in your Info.plist file.
 ///
-/// \param callback Block to be executed when Ver-ID is loaded. The block’s error parameter will not be nil if the client app authentication fails. You may still run Ver-ID when client app authentication fails but the functionality will be limited.
+/// \param callback Block to be executed when Ver-ID is loaded. The block’s error parameter will not be nil if the client app authentication fails.
 ///
 - (void)load:(NSString * _Nullable)apiSecret callback:(void (^ _Nullable)(BOOL, NSError * _Nullable))callback;
 /// Unload Ver-ID. Unload Ver-ID and release its resources. You must call <code>load()</code> or <code>loadAsync(_:)</code> again prior to calling any Ver-ID methods.
 /// seealso:
-/// <code>load(_:)</code>
+/// <code>load(_:callback:)</code>
 - (void)unload;
 /// Determine whether Ver-ID has been loaded.
 /// <code>true</code> if Ver-ID has been loaded and is ready to use.
 /// seealso:
-/// <code>load(_:)</code>
+/// <code>load(_:callback:)</code>
 @property (nonatomic, readonly) BOOL isLoaded;
 /// Authentication security level. Choose higher levels for stricter authentication or lower levels to be more forgiving.
 /// seealso:
-/// <code>VerID.SecurityLevel</code>
-@property (nonatomic) enum SecurityLevel securityLevel;
+/// <code>VerIDSecurityLevel</code>
+@property (nonatomic) enum VerIDSecurityLevel securityLevel;
 /// List of registered Ver-ID users.
 ///
 /// returns:
@@ -285,47 +297,31 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VerID * _Non
 /// an image that can be used as a profile picture or nil if the picture or the user is unavailable
 - (UIImage * _Nullable)userProfilePicture:(NSString * _Nonnull)userId SWIFT_WARN_UNUSED_RESULT;
 - (NSURL * _Nullable)profilePictureURLWithUserId:(NSString * _Nonnull)userId SWIFT_WARN_UNUSED_RESULT;
+/// Detect faces in the supplied UIImage. The function will return right away and run the callback block when the detection completes. It’s safe to call on the main queue.
+/// \param image The image in which to detect faces
+///
+/// \param keepForRecognition Set to <code>false</code> unless you are planning to use the face for operations that require face recognition like registration or authentication.
+///
+/// \param callback The block to execute when the face detection completes
+///
+- (void)detectFaceInImage:(UIImage * _Nonnull)image keepForRecognition:(BOOL)keepForRecognition callback:(void (^ _Nonnull)(VerIDFace * _Nullable))callback;
+/// Detect faces in the supplied UIImage. The function will block until the detection completes. Should be called on a background queue.
+/// \param image The image in which to detect faces
+///
+/// \param keepForRecognition Set to <code>false</code> unless you are planning to use the face for operations that require face recognition like registration or authentication.
+///
+///
+/// throws:
+/// Error if a face cannot be found in the image
+///
+/// returns:
+/// Detected face
+- (VerIDFace * _Nullable)detectFaceInImage:(UIImage * _Nonnull)image keepForRecognition:(BOOL)keepForRecognition error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
-/// Authentication security level settings. Higher levels mean stricter authentication. Lower levels are more forgiving.
-typedef SWIFT_ENUM(NSInteger, SecurityLevel) {
-/// The most relaxed security. Legitimate users should have no difficulty authenticating. May authenticate an imposter.
-  SecurityLevelLowest = 0,
-/// Easy authentication.
-  SecurityLevelLow = 1,
-/// Balance of easy authentication and high security.
-  SecurityLevelNormal = 2,
-/// High security.
-  SecurityLevelHigh = 3,
-/// Strictest security. Least likely to authenticate an imposter. Legitimate users may have difficulty authenticating.
-  SecurityLevelHighest = 4,
-};
-
-/// Bearing of the user’s head as she’s looking at the camera
-typedef SWIFT_ENUM(NSInteger, Bearing) {
-/// The user’s head is level with the camera
-  BearingStraight = 0,
-/// The user’s head is turned up
-  BearingUp = 1,
-/// The user’s head is turned right and up
-  BearingRightUp = 2,
-/// The user’s head is turned right
-  BearingRight = 3,
-/// The user’s head is turned right and down
-  BearingRightDown = 4,
-/// The user’s head is turned down
-  BearingDown = 5,
-/// The user’s head is turned left and down
-  BearingLeftDown = 6,
-/// The user’s head is turned left
-  BearingLeft = 7,
-/// The user’s head is turned left and up
-  BearingLeftUp = 8,
-};
-
 /// Anti-spoofing methods
-typedef SWIFT_ENUM(NSInteger, AntiSpoofingMethod) {
-  AntiSpoofingMethodBearing = 0,
+typedef SWIFT_ENUM(NSInteger, VerIDAntiSpoofingMethod) {
+  VerIDAntiSpoofingMethodBearing = 0,
 };
 
 @class VerIDSessionSettings;
@@ -343,8 +339,7 @@ SWIFT_CLASS("_TtC5VerID12VerIDSession")
 /// Session initializer.
 /// \param settings Session settings. May only be set at initialization.
 ///
-- (nonnull instancetype)initWithSettings:(VerIDSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Start the session.
 - (void)start;
 /// Cancel (stop) the session. <code>session(_:didFinishWithOutcome:)</code> will be called on your delegate with the outcome value set to <code>.cancel</code>.
@@ -365,109 +360,181 @@ typedef SWIFT_ENUM(NSInteger, Outcome) {
   OutcomeFailAntiSpoofingChallenge = 4,
 /// The session outcome is inconclusive because it’s still waiting for more images
   OutcomeWaiting = 5,
-/// The session failed because the client host app didn’t authenticate
-  OutcomeFailHostAuthentication = 6,
 /// The session failed because Ver-ID is not loaded
-  OutcomeFailNotLoaded = 7,
+  OutcomeFailNotLoaded = 6,
 /// One of the detection/recognition library calls returned an error
-  OutcomeDetRecLibFailure = 8,
+  OutcomeDetRecLibFailure = 7,
 };
 
+@class VerIDAuthenticationSessionSettings;
 
-/// Represents an authentication session.
+/// Use to launch authentication sessions
 SWIFT_CLASS("_TtC5VerID26VerIDAuthenticationSession")
 @interface VerIDAuthenticationSession : VerIDSession
-- (nonnull instancetype)initWithSettings:(VerIDSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+/// Authentication session initializer
+/// \param settings The settings for the session or <code>nil</code> to use default
+///
+- (nonnull instancetype)initWithSettings:(VerIDAuthenticationSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
-/// Settings common to registration and authentication sessions
+/// Settings common to registration, authentication and liveness detection sessions
 SWIFT_CLASS("_TtC5VerID20VerIDSessionSettings")
 @interface VerIDSessionSettings : NSObject
-/// How many successful results the session must collect before it finishes.
+/// True to show a guide to the user before the session begins
+@property (nonatomic) BOOL showGuide;
+/// True to show the result of the session to the user
+@property (nonatomic) BOOL showResult;
+/// Number of successful results the session must collect before it finishes
 @property (nonatomic) NSInteger numberOfResultsToCollect;
-/// The time the user has to complete each bearing (in seconds).
+/// Time the user has to complete the session
 @property (nonatomic) NSTimeInterval expiryTime;
+/// Constructor
+/// \param expiryTime Time the user has to complete the session
+///
+/// \param numberOfResultsToCollect Number of successful results the session must collect before it finishes
+///
 - (nonnull instancetype)initWithExpiryTime:(NSTimeInterval)expiryTime numberOfResultsToCollect:(NSInteger)numberOfResultsToCollect OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-typedef SWIFT_ENUM(NSInteger, LivenessDetection) {
-  LivenessDetectionNone = 0,
-  LivenessDetectionRegular = 1,
-  LivenessDetectionStrict = 2,
-};
 
-
+/// Liveness detection session settings
 SWIFT_CLASS("_TtC5VerID37VerIDLivenessDetectionSessionSettings")
 @interface VerIDLivenessDetectionSessionSettings : VerIDSessionSettings
-@property (nonatomic) BOOL showGuide;
-@property (nonatomic) BOOL showResult;
-/// How long the session should wait before authenticating the first captured face (in seconds). When running anti-spoofing the user has to have time to assume the requested pose. On authentication sessions where anti-spoofing is not employed the default value is <code>0.0</code>. Otherwise it’s <code>2.0</code>.
-@property (nonatomic) NSTimeInterval segmentStartDelay;
-/// Minimum duration of the authentication segment. If the user authenticates before the duration elapses the session will wait before loading the next segment. This is to prevent the instructions from changing too fast.
+/// Minimum duration of one pose segment. If the user fulfills the request before the duration elapses the session will wait before loading the next segment. This is to prevent the instructions from changing too fast.
 @property (nonatomic) NSTimeInterval segmentDuration;
-/// The number of segments required per session. The user is prompted to assume a random bearing in each segment in sessions that employ anti-spoofing. The default for anti-spoofing sessions is <code>4</code>, for sessions that do not employ anti-spoofing the default is <code>1</code>.
-@property (nonatomic) NSInteger requiredNumberOfSegments;
 @property (nonatomic) BOOL includeFaceTemplatesInResult;
 - (nonnull instancetype)initWithExpiryTime:(NSTimeInterval)expiryTime numberOfResultsToCollect:(NSInteger)numberOfResultsToCollect OBJC_DESIGNATED_INITIALIZER;
 @end
 
+enum VerIDLivenessDetection : NSInteger;
 
 /// Settings for authentication sessions
 SWIFT_CLASS("_TtC5VerID34VerIDAuthenticationSessionSettings")
 @interface VerIDAuthenticationSessionSettings : VerIDLivenessDetectionSessionSettings
+/// ID of the user to authenticate
 @property (nonatomic, readonly, copy) NSString * _Nonnull userId;
-@property (nonatomic, readonly) enum LivenessDetection livenessDetection;
-- (nonnull instancetype)initWithUserId:(NSString * _Nonnull)userId livenessDetection:(enum LivenessDetection)livenessDetection OBJC_DESIGNATED_INITIALIZER;
+/// Liveness detection level to employ in the session. Default is <code>.regular</code>
+@property (nonatomic, readonly) enum VerIDLivenessDetection livenessDetection;
+/// Constructor
+/// \param userId ID of the user to authenticate
+///
+/// \param livenessDetection Liveness detection level to employ in the session. Default is <code>.regular</code>
+///
+- (nonnull instancetype)initWithUserId:(NSString * _Nonnull)userId livenessDetection:(enum VerIDLivenessDetection)livenessDetection OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithExpiryTime:(NSTimeInterval)expiryTime numberOfResultsToCollect:(NSInteger)numberOfResultsToCollect SWIFT_UNAVAILABLE;
 @end
+
+/// Bearing of the user’s head as she/he looks at the camera
+typedef SWIFT_ENUM(NSInteger, VerIDBearing) {
+/// The user’s head is level with the camera
+  VerIDBearingStraight = 0,
+/// The user’s head is turned up
+  VerIDBearingUp = 1,
+/// The user’s head is turned right and up
+  VerIDBearingRightUp = 2,
+/// The user’s head is turned right
+  VerIDBearingRight = 3,
+/// The user’s head is turned right and down
+  VerIDBearingRightDown = 4,
+/// The user’s head is turned down
+  VerIDBearingDown = 5,
+/// The user’s head is turned left and down
+  VerIDBearingLeftDown = 6,
+/// The user’s head is turned left
+  VerIDBearingLeft = 7,
+/// The user’s head is turned left and up
+  VerIDBearingLeftUp = 8,
+};
 
 
 SWIFT_CLASS("_TtC5VerID17VerIDDebugSession")
 @interface VerIDDebugSession : VerIDSession
-- (nonnull instancetype)initWithSettings:(VerIDSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 /// Represents a face found by Ver-ID
 SWIFT_CLASS("_TtC5VerID9VerIDFace")
 @interface VerIDFace : NSObject
+/// The original face detected by the face detection framework
+@property (nonatomic, readonly, strong) FBFace * _Nonnull fbFace;
+/// Quality of the detected face ranging from <code>0.0</code> (worst quality) to <code>20.0</code> (best quality)
+@property (nonatomic, readonly) float quality;
+/// Bounds of the face within the original image
+@property (nonatomic, readonly) CGRect bounds;
+/// True if the face is being processed in the background
+@property (nonatomic, readonly) BOOL processingInBackground;
+/// True if the face can be used for face recognition
+@property (nonatomic, readonly) BOOL suitableForRecognition;
+/// An identifier for the face. This may change after processing if the face is being processed.
+@property (nonatomic, readonly) NSInteger id;
+/// Rotation of the face expressed as euler angle (yaw, pitch, roll)
+@property (nonatomic, readonly, strong) EulerAngleF * _Nonnull rotation;
+@property (nonatomic, readonly, copy, getter=template) NSArray<NSNumber *> * _Nullable template_;
+/// Center of the face within the original image
+@property (nonatomic) CGPoint center;
+/// Bearing of the face derived from its rotation
+@property (nonatomic) enum VerIDBearing bearing;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+/// Liveness detection constants
+typedef SWIFT_ENUM(NSInteger, VerIDLivenessDetection) {
+/// No liveness detection
+  VerIDLivenessDetectionNone = 0,
+/// Regular liveness detection (suitable in most cases)
+  VerIDLivenessDetectionRegular = 1,
+/// Strict liveness detection (the user must register faces with different poses)
+  VerIDLivenessDetectionStrict = 2,
+};
+
+
+/// Use to launch liveness detection sessions
+SWIFT_CLASS("_TtC5VerID29VerIDLivenessDetectionSession")
+@interface VerIDLivenessDetectionSession : VerIDSession
+/// Liveness detection session initializer
+/// \param settings The settings for the session or <code>nil</code> to use default
+///
+- (nonnull instancetype)initWithSettings:(VerIDLivenessDetectionSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
-SWIFT_CLASS("_TtC5VerID29VerIDLivenessDetectionSession")
-@interface VerIDLivenessDetectionSession : VerIDSession
-/// Instantiates a liveness detection session
-/// \param settings Session settings
-///
-- (nonnull instancetype)initWithSettings:(VerIDSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
-@end
+@class VerIDRegistrationSessionSettings;
 
-
-
-/// Use this class to launch Ver-ID registration sessions
+/// Use to launch registration sessions
 SWIFT_CLASS("_TtC5VerID24VerIDRegistrationSession")
 @interface VerIDRegistrationSession : VerIDSession
-/// Session initializer.
-/// \param userId Identifier for the user being registered. If <code>nil</code> or omitted a unique identifier will be generated.
+/// Registration session initializer
+/// \param settings The settings for the session or <code>nil</code> to use default
 ///
-/// \param settings The settings for the session. If <code>nil</code> or omitted the session will use the default registration settings.
-///
-- (nonnull instancetype)initWithSettings:(VerIDSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSettings:(VerIDRegistrationSessionSettings * _Nullable)settings OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 
 /// Settings for registration sessions
 SWIFT_CLASS("_TtC5VerID32VerIDRegistrationSessionSettings")
 @interface VerIDRegistrationSessionSettings : VerIDSessionSettings
-@property (nonatomic) BOOL showGuide;
-@property (nonatomic) BOOL showResult;
-@property (nonatomic, readonly) enum LivenessDetection livenessDetection;
+/// Liveness detection level to be used at authentication. Default is [.regular].
+@property (nonatomic, readonly) enum VerIDLivenessDetection livenessDetection;
+/// ID of the user to register
 @property (nonatomic, readonly, copy) NSString * _Nonnull userId;
+/// False to delete the user before registering faces
 @property (nonatomic) BOOL appendIfUserExists;
-- (nonnull instancetype)initWithUserId:(NSString * _Nullable)userId livenessDetection:(enum LivenessDetection)livenessDetection showGuide:(BOOL)showGuide showResult:(BOOL)showResult OBJC_DESIGNATED_INITIALIZER;
+/// Constructor
+/// \param userId ID of the user to register, UUID will be generated if nil
+///
+/// \param livenessDetection The level of liveness detection that will be available at authentication. The default is <code>.regular</code>
+///
+/// \param showGuide True to show a guide to the user before the registration
+///
+/// \param showResult True to show the result of the session to the user
+///
+- (nonnull instancetype)initWithUserId:(NSString * _Nullable)userId livenessDetection:(enum VerIDLivenessDetection)livenessDetection showGuide:(BOOL)showGuide showResult:(BOOL)showResult OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithExpiryTime:(NSTimeInterval)expiryTime numberOfResultsToCollect:(NSInteger)numberOfResultsToCollect SWIFT_UNAVAILABLE;
 @end
 
@@ -508,6 +575,20 @@ SWIFT_CLASS("_TtC5VerID31VerIDRegistrationViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+/// Authentication security level settings. Higher levels mean stricter authentication. Lower levels are more forgiving.
+typedef SWIFT_ENUM(NSInteger, VerIDSecurityLevel) {
+/// The most relaxed security. Legitimate users should have no difficulty authenticating. May authenticate an imposter.
+  VerIDSecurityLevelLowest = 0,
+/// Easy authentication.
+  VerIDSecurityLevelLow = 1,
+/// Balance of easy authentication and high security.
+  VerIDSecurityLevelNormal = 2,
+/// High security.
+  VerIDSecurityLevelHigh = 3,
+/// Strictest security. Least likely to authenticate an imposter. Legitimate users may have difficulty authenticating.
+  VerIDSecurityLevelHighest = 4,
+};
+
 
 @class VerIDSessionResult;
 
@@ -515,23 +596,16 @@ SWIFT_CLASS("_TtC5VerID31VerIDRegistrationViewController")
 SWIFT_PROTOCOL("_TtP5VerID20VerIDSessionDelegate_")
 @protocol VerIDSessionDelegate
 @optional
-/// Implement this method to observe the individual face detection results. You may use this to observe the collected images and the faces found in them.
-/// \param session The session returning the result.
-///
-/// \param result The result. Includes the users identified in the collected face.
-///
-/// \param image The image used for face detection. If the result is generated following a timeout the image will be <code>nil</code>.
-///
-/// \param face The face detected in the image. May be <code>nil</code> if no face is detected or if the result is generated following a timeout.
-///
+/// Deprecated: Use session:didFinishWithResult:
 - (void)session:(VerIDSession * _Nonnull)session didReturnResult:(VerIDSessionResult * _Nonnull)result forImage:(UIImage * _Nullable)image andFace:(VerIDFace * _Nullable)face;
-/// Implement this method to observe the final outcome of non-persistent sessions. <code>.success</code> indicates that the user authenticated or finished registration, depending on the kind of session returning the result.
-/// \param session The session returning the outcome.
-///
-/// \param outcome The outcome of the session.
-///
+/// Deprecated: Use session:didFinishWithResult:
 - (void)session:(VerIDSession * _Nonnull)session didFinishWithOutcome:(enum Outcome)outcome;
 @required
+/// Implement this method to listen for the result at the end of the session
+/// \param session The session returning the result
+///
+/// \param result The result of the session
+///
 - (void)session:(VerIDSession * _Nonnull)session didFinishWithResult:(VerIDSessionResult * _Nonnull)result;
 @end
 
@@ -539,6 +613,45 @@ SWIFT_PROTOCOL("_TtP5VerID20VerIDSessionDelegate_")
 /// Represents a result of face detection and authentication
 SWIFT_CLASS("_TtC5VerID18VerIDSessionResult")
 @interface VerIDSessionResult : NSObject
+/// When the result was collected (time interval since 1970)
+@property (nonatomic, readonly) double timestamp;
+/// The outcome
+@property (nonatomic, readonly) enum Outcome outcome;
+/// Whether the result is positive <code>true</code> or not <code>false</code>
+@property (nonatomic, readonly) BOOL positive;
+/// The users identified in the faces in the result
+@property (nonatomic, readonly, copy) NSArray<VerIDUser *> * _Nonnull identifiedUsers;
+/// All faces collected in the session
+@property (nonatomic, readonly, copy) NSArray<VerIDFace *> * _Nonnull faces;
+/// Faces collected in the session that are suitable for face recognition (to be used for authentication or registration)
+@property (nonatomic, readonly, copy) NSArray<VerIDFace *> * _Nonnull facesSuitableForRecognition;
+/// Images collected in the session
+@property (nonatomic, readonly, copy) NSArray<NSURL *> * _Nonnull images;
+/// Dictionary of faces and their corresponding image URLs collected in the session
+/// \param bearing Requested face bearing or nil to return all entries regardless of their face bearing
+///
+///
+/// returns:
+/// VerIDFace/URL dictionary
+- (NSDictionary<VerIDFace *, NSURL *> * _Nonnull)faceImagesWithBearing:(enum VerIDBearing)bearing SWIFT_WARN_UNUSED_RESULT;
+/// Dictionary of faces and their corresponding image URLs collected in the session
+@property (nonatomic, readonly, copy) NSDictionary<VerIDFace *, NSURL *> * _Nonnull faceImages;
+/// Faces with given bearing collected in the session
+/// \param bearing Requested face bearing or nil to return all faces regardless of their bearing
+///
+///
+/// returns:
+/// Array of faces
+- (NSArray<VerIDFace *> * _Nonnull)facesWithBearing:(enum VerIDBearing)bearing SWIFT_WARN_UNUSED_RESULT;
+/// URLs of images with the given face bearing collected in the session
+/// \param bearing Requested face bearing or nil to return all images regardless of their face bearing
+///
+///
+/// returns:
+/// Array of image URLs
+- (NSArray<NSURL *> * _Nonnull)imageURLsWithBearing:(enum VerIDBearing)bearing SWIFT_WARN_UNUSED_RESULT;
+/// URLs of images collected in the session
+@property (nonatomic, readonly, copy) NSArray<NSURL *> * _Nonnull imageURLs;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
@@ -552,6 +665,8 @@ SWIFT_CLASS("_TtC5VerID9VerIDUser")
 /// Array of bearings registered for this user. Consider using the set <code>bearings</code> in Swift apps.
 /// -See: <code>bearings</code>
 @property (nonatomic, readonly, copy) NSArray<NSNumber *> * _Nonnull bearingsArray;
+/// Default user ID
+/// Convenience value to use if your app only has one user
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull defaultUserId;)
 + (NSString * _Nonnull)defaultUserId SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

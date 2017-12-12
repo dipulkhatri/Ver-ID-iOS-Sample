@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Common.html">Common</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/VerID.html">VerID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDSession.html">VerIDSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDSession/Outcome.html">– Outcome</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDSessionSettings.html">VerIDSessionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/VerIDSessionDelegate.html">VerIDSessionDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDSessionResult.html">VerIDSessionResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDUser.html">VerIDUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDFace.html">VerIDFace</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Registration.html">Registration</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/VerIDRegistrationSession.html">VerIDRegistrationSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDRegistrationSessionSettings.html">VerIDRegistrationSessionSettings</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Authentication.html">Authentication</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/VerIDAuthenticationSession.html">VerIDAuthenticationSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VerIDAuthenticationSessionSettings.html">VerIDAuthenticationSessionSettings</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Liveness Detection.html">Liveness Detection</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/VerIDLivenessDetectionSession.html">VerIDLivenessDetectionSession</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/VerIDLivenessDetectionSessionSettings.html">VerIDLivenessDetectionSessionSettings</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Enums.html">Other Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Other Enums.html#/c:@M@VerID@E@VerIDAntiSpoofingMethod">VerIDAntiSpoofingMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/VerIDBearing.html">VerIDBearing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/VerIDLivenessDetection.html">VerIDLivenessDetection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/VerIDSecurityLevel.html">VerIDSecurityLevel</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='ver-id-face-authentication-sdk' class='heading'>Ver-ID Face Authentication SDK</h1>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p>Ver-ID gives your application the ability to authenticate users by their faces. Ver-ID replaces the need to remember and type passwords. Ver-ID stores all its assets on the client making the entire face authentication process available offline.</p>
+
+<p>Your application will interact with Ver-ID in two tasks:</p>
+
+<ol>
+<li>To register the user&rsquo;s faces and add them as templates for future authentication,</li>
+<li>To authenticate the user on subsequent visits.</li>
+</ol>
+<h2 id='tasks' class='heading'>Tasks</h2>
+<h3 id='user-registration' class='heading'>User registration</h3>
+
+<p>Before the user can authenticate Ver-ID needs to acquire a number of images of the user&rsquo;s face. These images serve as templates used for comparison at the time of authentication.
+Your app instructs Ver-ID to register the user. Ver-ID then attempts to register the user and returns a result of the registration session. After successful registration the user is able to authenticate using her/his face.</p>
+
+<p>Your app may register additional faces for an authenticated user to extend the probability of positive authentication under varying ambient lighting conditions.</p>
+<h3 id='authentication' class='heading'>Authentication</h3>
+
+<p>Ver-ID can only authenticate users who have previously registered (see previous section).
+Your app can ask Ver-ID to either authenticate a specific user or to identify and authenticate any registered user. This means your registered users may not even need to enter their user name to authenticate.</p>
+<h3 id='liveness-detection' class='heading'>Liveness Detection</h3>
+
+<p>If you need ensure that the user in front of the camera is a live person and not a picture or video impersonation you can use Ver-ID&rsquo;s liveness detection feature. Ver-ID will ask the user to turn in random directions.</p>
+<h2 id='adding-ver-id-in-your-xcode-project' class='heading'>Adding Ver-ID in Your Xcode Project</h2>
+
+<p>Follow these steps to add Ver-ID to your Xcode project:</p>
+
+<ol>
+<li><a href="https://dev.ver-id.com/admin/register">Request an API secret</a> for your app.</li>
+<li>In Xcode open your project&rsquo;s <strong>Info.plist</strong> file and add the following entry,  substituting <code>[your API secret]</code> for the API secret received in step 1.</li>
+</ol>
+<pre class="highlight xml"><code><span class="nt">&lt;key&gt;</span>com.appliedrec.verid.apiSecret<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;string&gt;</span>[your API secret]<span class="nt">&lt;/string&gt;</span>
+</code></pre>
+
+<ol>
+<li>Select your app target, click on the <strong>General</strong> tab and scroll down to <strong>Embedded binaries</strong>.</li>
+<li>Click the <strong>+</strong> button on the bottom of the pane and add <strong>VerID.framework</strong>.</li>
+</ol>
+<h2 id='getting-started-with-the-ver-id-api' class='heading'>Getting Started with the Ver-ID API</h2>
+
+<p>There are 4 steps you will follow in a normal Ver-ID session:</p>
+
+<ol>
+<li>Load Ver-ID
+
+<ul>
+<li>If you specify the Ver-ID API secret in your Info.plist file you can skip this step and let Ver-ID load implicitly.</li>
+<li>You may explicitly load Ver-ID if you want to show a loading page while Ver-ID loads and present a specific view controller depending on the success of the load operation. See <code>AppDelegate</code> in the Ver-ID SDK sample app for an example.</li>
+<li>To load Ver-ID call <code>VerID.shared.load</code>.</li>
+</ul></li>
+<li>Launch a Ver-ID session
+
+<ul>
+<li>Implement <code><a href="Protocols/VerIDSessionDelegate.html">VerIDSessionDelegate</a></code> in your view controller.</li>
+<li>Create an settings object for your particular session (e.g. <code><a href="Classes/VerIDRegistrationSessionSettings.html">VerIDRegistrationSessionSettings</a></code>)</li>
+<li>Create an instance of a <code><a href="Classes/VerIDSession.html">VerIDSession</a></code> subclass (e.g. <code><a href="Classes/VerIDRegistrationSession.html">VerIDRegistrationSession</a></code>) with the settings object created in the previous step.</li>
+<li>Set your view controller as the delegate of the session instance.</li>
+<li>Start the session by calling the session&rsquo;s <code>start</code> method.</li>
+</ul></li>
+<li>Receive a result from the session
+
+<ul>
+<li>When the session finishes it will call <code>session:_:didFinishWithResult</code> on your view controller.</li>
+<li>Inspect the <code>result</code> object for details of the session&rsquo;s outcome.</li>
+</ul></li>
+<li>Unload Ver-ID
+
+<ul>
+<li>You may call <code>VerID.shared.unload</code> to free up disk resources used by Ver-ID.</li>
+</ul></li>
+</ol>
+<h3 id='a-name-registration-a-registration' class='heading'><a name="registration"></a>Registration</h3>
+
+<p>Following are the exact steps your application should take to register a user.</p>
+
+<ol>
+<li>Ensure your view controller implements <code><a href="Protocols/VerIDSessionDelegate.html">VerIDSessionDelegate</a></code>.</li>
+<li><p>Check that your user is not already registered. Do not run this code on the main queue as it may hold up your app.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">userId</span> <span class="o">=</span> <span class="s">"myUserId"</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">try</span> <span class="kt">VerID</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">isUserRegistered</span><span class="p">(</span><span class="n">userId</span><span class="p">)</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="c1">// User is registered</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// User is not registered</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="c1">// The call failed</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">userId</span> <span class="o">=</span> <span class="s">@"myUserId"</span><span class="p">;</span>
+<span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
+<span class="c1">// Load the registered users
+</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">VerIDUser</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">users</span> <span class="o">=</span> <span class="p">[[</span><span class="n">VerID</span> <span class="nf">shared</span><span class="p">]</span> <span class="nf">registeredVerIDUsersAndReturnError</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSEnumerator</span> <span class="o">*</span><span class="n">userEnumerator</span> <span class="o">=</span> <span class="p">[</span><span class="n">users</span> <span class="nf">objectEnumerator</span><span class="p">];</span>
+    <span class="n">VerIDUser</span> <span class="o">*</span><span class="n">user</span><span class="p">;</span>
+    <span class="c1">// Enumerate over users and see if our user is registered
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="p">[</span><span class="n">userEnumerator</span> <span class="nf">nextObject</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">([[</span><span class="n">user</span> <span class="nf">userId</span><span class="p">]</span> <span class="nf">isEqualToString</span><span class="p">:[</span><span class="n">VerIDUser</span> <span class="nf">defaultUserId</span><span class="p">]])</span> <span class="p">{</span>
+            <span class="c1">// User is registered
+</span>            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// User is not registered
+</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// The call failed
+</span><span class="p">}</span>
+</code></pre></li>
+<li><p>If the user is already registered authenticate her/him before registering new faces. See <a href="#authentication">Authentication</a>.</p></li>
+<li><p>Create registration settings.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">settins</span> <span class="o">=</span> <span class="kt">VerIDRegistrationSessionSettings</span><span class="p">(</span><span class="nv">userId</span><span class="p">:</span> <span class="n">userId</span><span class="p">)</span>
+<span class="c1">// If you wish to show a guide on how to register to the user</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">showGuide</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="c1">// If you wish to show the result of the session to the user</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">showResult</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="n">VerIDRegistrationSessionSettings</span> <span class="o">*</span><span class="n">settings</span> <span class="o">=</span> <span class="p">[[</span><span class="n">VerIDRegistrationSessionSettings</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithUserId</span><span class="p">:[</span><span class="n">VerIDUser</span> <span class="nf">defaultUserId</span><span class="p">]</span> <span class="nf">livenessDetection</span><span class="p">:</span><span class="n">VerIDLivenessDetectionRegular</span> <span class="n">showGuide</span><span class="o">:</span><span class="nb">NO</span> <span class="n">showResult</span><span class="o">:</span><span class="nb">NO</span><span class="p">];</span>
+<span class="c1">// If you wish to show a guide on how to register to the user
+</span><span class="n">settings</span><span class="p">.</span><span class="n">showGuide</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="c1">// If you wish to show the result of the session to the user
+</span><span class="n">settings</span><span class="p">.</span><span class="n">showResult</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+</code></pre></li>
+<li><p>Create a registration session instance, set its delegate and start the session.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">VerIDRegistrationSession</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+<span class="n">session</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="n">VerIDRegistrationSession</span> <span class="o">*</span><span class="n">session</span> <span class="o">=</span> <span class="p">[[</span><span class="n">VerIDRegistrationSession</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSettings</span><span class="p">:</span><span class="n">settings</span><span class="p">];</span>
+<span class="p">[</span><span class="n">session</span> <span class="nf">setDelegate</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">session</span> <span class="nf">start</span><span class="p">];</span>
+</code></pre></li>
+<li><p>Receive the result of the session in your view controller.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">VerIDSession</span><span class="p">,</span> <span class="n">didFinishWithResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">VerIDSessionResult</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Inspect the result</span>
+    <span class="c1">// Some examples:</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">positive</span> <span class="p">{</span>
+        <span class="c1">// The user finished the registration</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">imageURL</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span>
+        <span class="c1">// This is the URL of the first "selfie" image collected in the session</span>
+        <span class="c1">// The image will be deleted next time Ver-ID is loaded or when you call unload. </span>
+        <span class="c1">// Copy it somewhere if you wish to retain it across sessions.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">session</span><span class="p">:(</span><span class="n">VerIDSession</span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">session</span> <span class="nf">didFinishWithResult</span><span class="p">:(</span><span class="n">VerIDSessionResult</span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">result</span> <span class="p">{</span>
+    <span class="c1">// Inspect the result
+</span>    <span class="c1">// Some examples:
+</span>    <span class="k">if</span> <span class="p">([</span><span class="n">result</span> <span class="nf">positive</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// The user finished the registration
+</span>    <span class="p">}</span>
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">imageURL</span> <span class="o">=</span> <span class="p">[[</span><span class="n">result</span> <span class="nf">images</span><span class="p">]</span> <span class="nf">firstObject</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">imageURL</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// This is the URL of the first "selfie" image collected in the session
+</span>        <span class="c1">// The image will be deleted next time Ver-ID is loaded or when you call unload. 
+</span>        <span class="c1">// Copy it somewhere if you wish to retain it across sessions.
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></li>
+</ol>
+<h3 id='a-name-authentication-a-authentication' class='heading'><a name="authentication"></a>Authentication</h3>
+
+<p>Follow these steps to authenticate any user who previously registered in your app without asking for a user name or password.</p>
+
+<ol>
+<li>Ensure the user is registered (see step 2 of <a href="#registration">Registration</a>)</li>
+<li><p>Create authentication settings.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">VerIDAuthenticationSessionSettings</span><span class="p">(</span><span class="nv">userId</span><span class="p">:</span> <span class="n">userId</span><span class="p">)</span>
+<span class="c1">// If you wish to show a guide on how to authenticate to the user</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">showResult</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="c1">// If you wish to show the result of the session to the user</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">showGuide</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="n">VerIDAuthenticationSessionSettings</span> <span class="o">*</span><span class="n">settings</span> <span class="o">=</span> <span class="p">[[</span><span class="n">VerIDAuthenticationSessionSettings</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithUserId</span><span class="p">:</span><span class="n">userId</span> <span class="nf">livenessDetection</span><span class="p">:</span><span class="n">VerIDLivenessDetectionRegular</span><span class="p">];</span>
+<span class="c1">// If you wish to show a guide on how to authenticate to the user
+</span><span class="n">settings</span><span class="p">.</span><span class="n">showGuide</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="c1">// If you wish to show the result of the session to the user
+</span><span class="n">settings</span><span class="p">.</span><span class="n">showResult</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+</code></pre></li>
+<li><p>Create an authentication session instance, set its delegate and start the session.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">VerIDAuthenticationSession</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+<span class="n">session</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="n">VerIDAuthenticationSession</span> <span class="o">*</span><span class="n">session</span> <span class="o">=</span> <span class="p">[[</span><span class="n">VerIDAuthenticationSession</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSettings</span><span class="p">:</span><span class="n">settings</span><span class="p">];</span>
+<span class="p">[</span><span class="n">session</span> <span class="nf">setDelegate</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">session</span> <span class="nf">start</span><span class="p">];</span>
+</code></pre></li>
+<li><p>Receive the result of the session in your view controller.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">VerIDSession</span><span class="p">,</span> <span class="n">didFinishWithResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">VerIDSessionResult</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Inspect the result</span>
+    <span class="c1">// Some examples:</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">positive</span> <span class="p">{</span>
+        <span class="c1">// The user has authenticated</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">imageURL</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span>
+        <span class="c1">// This is the URL of the first "selfie" image collected in the session</span>
+        <span class="c1">// The image will be deleted next time Ver-ID is loaded or when you call unload. </span>
+        <span class="c1">// Copy it somewhere if you wish to retain it across sessions.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">session</span><span class="p">:(</span><span class="n">VerIDSession</span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">session</span> <span class="nf">didFinishWithResult</span><span class="p">:(</span><span class="n">VerIDSessionResult</span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">result</span> <span class="p">{</span>
+    <span class="c1">// Inspect the result
+</span>    <span class="c1">// Some examples:
+</span>    <span class="k">if</span> <span class="p">([</span><span class="n">result</span> <span class="nf">positive</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// The user has authenticated
+</span>    <span class="p">}</span>
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">imageURL</span> <span class="o">=</span> <span class="p">[[</span><span class="n">result</span> <span class="nf">images</span><span class="p">]</span> <span class="nf">firstObject</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">imageURL</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// This is the URL of the first "selfie" image collected in the session
+</span>        <span class="c1">// The image will be deleted next time Ver-ID is loaded or when you call unload. 
+</span>        <span class="c1">// Copy it somewhere if you wish to retain it across sessions.
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></li>
+</ol>
+<h3 id='a-name-liveness_detection-a-liveness-detection' class='heading'><a name="liveness_detection"></a>Liveness Detection</h3>
+
+<p>Follow these steps to ensure the user holding the device is a live person.</p>
+
+<ol>
+<li><p>Create a liveness detection session instance, set its delegate and start the session.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">VerIDLivenessDetectionSession</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+<span class="n">session</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="n">VerIDLivenessDetectionSession</span> <span class="o">*</span><span class="n">session</span> <span class="o">=</span> <span class="p">[[</span><span class="n">VerIDLivenessDetectionSession</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSettings</span><span class="p">:</span><span class="nb">NULL</span><span class="p">];</span>
+<span class="p">[</span><span class="n">session</span> <span class="nf">setDelegate</span><span class="p">:</span><span class="n">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">session</span> <span class="nf">start</span><span class="p">];</span>
+</code></pre></li>
+<li><p>Receive the result of the session in your view controller.</p>
+<h4 id='swift' class='heading'>Swift</h4>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">VerIDSession</span><span class="p">,</span> <span class="n">didFinishWithResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">VerIDSessionResult</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Inspect the result</span>
+    <span class="c1">// Some examples:</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">positive</span> <span class="p">{</span>
+        <span class="c1">// The user provided a live "selfie"</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">imageURL</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span>
+        <span class="c1">// This is the URL of the first "selfie" image collected in the session</span>
+        <span class="c1">// The image will be deleted next time Ver-ID is loaded or when you call unload. </span>
+        <span class="c1">// Copy it somewhere if you wish to retain it across sessions.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='objective-c' class='heading'>Objective-C</h4>
+<pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">session</span><span class="p">:(</span><span class="n">VerIDSession</span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">session</span> <span class="nf">didFinishWithResult</span><span class="p">:(</span><span class="n">VerIDSessionResult</span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">result</span> <span class="p">{</span>
+    <span class="c1">// Inspect the result
+</span>    <span class="c1">// Some examples:
+</span>    <span class="k">if</span> <span class="p">([</span><span class="n">result</span> <span class="nf">positive</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// The user provided a live "selfie"
+</span>    <span class="p">}</span>
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">imageURL</span> <span class="o">=</span> <span class="p">[[</span><span class="n">result</span> <span class="nf">images</span><span class="p">]</span> <span class="nf">firstObject</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">imageURL</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// This is the URL of the first "selfie" image collected in the session
+</span>        <span class="c1">// The image will be deleted next time Ver-ID is loaded or when you call unload. 
+</span>        <span class="c1">// Copy it somewhere if you wish to retain it across sessions.
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></li>
+</ol>
+<h2 id='advanced-use' class='heading'>Advanced Use</h2>
+
+<p>Ver-ID provides low-level functions for face detection and recognition if you prefer to supply the images yourself.</p>
+<h3 id='face-detection' class='heading'>Face detection</h3>
+<pre class="highlight swift"><code><span class="k">guard</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">contentsOfFile</span><span class="p">:</span> <span class="s">"path/to/myimagefile.jpg"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">face</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">VerID</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">detectFaceInImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nv">keepForRecognition</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='registration' class='heading'>Registration</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">userId</span> <span class="o">=</span> <span class="s">"myUserId"</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">VerID</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerFaces</span><span class="p">([</span><span class="n">face</span><span class="p">],</span> <span class="nv">asUser</span><span class="p">:</span> <span class="n">userId</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='authentication' class='heading'>Authentication</h3>
+<pre class="highlight swift"><code><span class="k">guard</span> <span class="k">let</span> <span class="nv">authenticated</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">VerID</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">authenticateUser</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">userId</span><span class="p">,</span> <span class="nv">inFaces</span><span class="p">:</span> <span class="p">[</span><span class="n">face</span><span class="p">])</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="n">authenticated</span> <span class="p">{</span>
+    <span class="c1">// The user is authenticated</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='cleanup' class='heading'>Cleanup</h3>
+
+<p>Discard the faces used for authentication. Keep the faces that were used for registration.</p>
+<pre class="highlight swift"><code><span class="kt">VerID</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">discardFaces</span><span class="p">([</span><span class="n">face</span><span class="p">])</span>
+</code></pre>
+
+<!--## Documentation
+
+Full API documentation is available on the project's [Github page](https://appliedrecognition.github.io/Ver-ID-iOS-Sample/com.appliedrec.ver_id.VerID.html).-->
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Applied Recognition, Inc.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

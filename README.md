@@ -310,6 +310,49 @@ Follow these steps to ensure the user holding the device is a live person.
 	}
 	~~~
 
+## Advanced Use
+
+Ver-ID provides low-level functions for face detection and recognition if you prefer to supply the images yourself.
+
+### Face detection
+
+~~~swift
+guard let image = UIImage(contentsOfFile: "path/to/myimagefile.jpg") else {
+    return
+}
+guard let face = try? VerID.shared.detectFaceInImage(image, keepForRecognition: true) else {
+    return
+}
+~~~
+
+### Registration
+
+~~~swift
+let userId = "myUserId"
+guard let user = try? VerID.shared.registerFaces([face], asUser: userId) else {
+    return
+}
+~~~
+
+### Authentication
+
+~~~swift
+guard let authenticated = try? VerID.shared.authenticateUser(id: user.userId, inFaces: [face]) else {
+    return
+}
+if authenticated {
+    // The user is authenticated
+}
+~~~
+
+### Cleanup
+
+Discard the faces used for authentication. Keep the faces that were used for registration.
+
+~~~swift
+VerID.shared.discardFaces([face])
+~~~
+
 <!--## Documentation
 
 Full API documentation is available on the project's [Github page](https://appliedrecognition.github.io/Ver-ID-iOS-Sample/com.appliedrec.ver_id.VerID.html).-->

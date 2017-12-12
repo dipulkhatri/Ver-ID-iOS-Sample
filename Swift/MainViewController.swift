@@ -104,10 +104,10 @@ class MainViewController: UIViewController, VerIDSessionDelegate {
     /// - Parameter sender: Sender of the action
     @IBAction func authenticate(_ sender: Any) {
         let requiredPoseCount = UserDefaults.standard.integer(forKey: "livenessDetectionPoses")
-        let settings = VerIDAuthenticationSessionSettings(userId: VerIDUser.defaultUserId)
+        let settings = VerIDAuthenticationSessionSettings(userId: VerIDUser.defaultUserId, livenessDetection: .regular)
         settings.showResult = true
         settings.showGuide = true
-        settings.requiredNumberOfSegments = requiredPoseCount + 1
+        settings.numberOfResultsToCollect = requiredPoseCount + 1
         let session = VerIDAuthenticationSession(settings: settings)
         session.delegate = self
         session.start()

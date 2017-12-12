@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VerIDSessionResult Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/VerIDSessionResult" class="dashAnchor"></a>
+    <a title="VerIDSessionResult Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        VerIDSessionResult Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Common.html">Common</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VerID.html">VerID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDSession.html">VerIDSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDSession/Outcome.html">– Outcome</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDSessionSettings.html">VerIDSessionSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VerIDSessionDelegate.html">VerIDSessionDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDSessionResult.html">VerIDSessionResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDUser.html">VerIDUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDFace.html">VerIDFace</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Registration.html">Registration</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDRegistrationSession.html">VerIDRegistrationSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDRegistrationSessionSettings.html">VerIDRegistrationSessionSettings</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Authentication.html">Authentication</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDAuthenticationSession.html">VerIDAuthenticationSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDAuthenticationSessionSettings.html">VerIDAuthenticationSessionSettings</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Liveness Detection.html">Liveness Detection</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDLivenessDetectionSession.html">VerIDLivenessDetectionSession</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VerIDLivenessDetectionSessionSettings.html">VerIDLivenessDetectionSessionSettings</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Enums.html#/c:@M@VerID@E@VerIDAntiSpoofingMethod">VerIDAntiSpoofingMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VerIDBearing.html">VerIDBearing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VerIDLivenessDetection.html">VerIDLivenessDetection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VerIDSecurityLevel.html">VerIDSecurityLevel</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>VerIDSessionResult</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">VerIDSessionResult</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Represents a result of face detection and authentication</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)timestamp"></a>
+                    <a name="//apple_ref/swift/Property/timestamp" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)timestamp">timestamp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When the result was collected (time interval since 1970)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)outcome"></a>
+                    <a name="//apple_ref/swift/Property/outcome" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)outcome">outcome</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The outcome</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">internal(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">outcome</span><span class="p">:</span> <span class="kt"><a href="../Classes/VerIDSession.html">VerIDSession</a></span><span class="o">.</span><span class="kt">Outcome</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)positive"></a>
+                    <a name="//apple_ref/swift/Property/positive" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)positive">positive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether the result is positive <code>true</code> or not <code>false</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">positive</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)identifiedUsers"></a>
+                    <a name="//apple_ref/swift/Property/identifiedUsers" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)identifiedUsers">identifiedUsers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The users identified in the faces in the result</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">identifiedUsers</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/VerIDUser.html">VerIDUser</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)faces"></a>
+                    <a name="//apple_ref/swift/Property/faces" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)faces">faces</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>All faces collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">faces</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)facesSuitableForRecognition"></a>
+                    <a name="//apple_ref/swift/Property/facesSuitableForRecognition" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)facesSuitableForRecognition">facesSuitableForRecognition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Faces collected in the session that are suitable for face recognition (to be used for authentication or registration)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">facesSuitableForRecognition</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)images"></a>
+                    <a name="//apple_ref/swift/Property/images" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)images">images</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Images collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(im)faceImagesWithBearing:"></a>
+                    <a name="//apple_ref/swift/Method/faceImages(withBearing:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(im)faceImagesWithBearing:">faceImages(withBearing:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Dictionary of faces and their corresponding image URLs collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">faceImages</span><span class="p">(</span><span class="n">withBearing</span> <span class="nv">bearing</span><span class="p">:</span> <span class="kt"><a href="../Enums/VerIDBearing.html">VerIDBearing</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">:</span><span class="kt">URL</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bearing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Requested face bearing or nil to return all entries regardless of their face bearing</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>VerIDFace/URL dictionary</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)faceImages"></a>
+                    <a name="//apple_ref/swift/Property/faceImages" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)faceImages">faceImages</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Dictionary of faces and their corresponding image URLs collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">faceImages</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">:</span><span class="kt">URL</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(im)facesWithBearing:"></a>
+                    <a name="//apple_ref/swift/Method/faces(withBearing:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(im)facesWithBearing:">faces(withBearing:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Faces with given bearing collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">faces</span><span class="p">(</span><span class="n">withBearing</span> <span class="nv">bearing</span><span class="p">:</span> <span class="kt"><a href="../Enums/VerIDBearing.html">VerIDBearing</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/VerIDFace.html">VerIDFace</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bearing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Requested face bearing or nil to return all faces regardless of their bearing</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array of faces</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(im)imageURLsWithBearing:"></a>
+                    <a name="//apple_ref/swift/Method/imageURLs(withBearing:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(im)imageURLsWithBearing:">imageURLs(withBearing:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>URLs of images with the given face bearing collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">imageURLs</span><span class="p">(</span><span class="n">withBearing</span> <span class="nv">bearing</span><span class="p">:</span> <span class="kt"><a href="../Enums/VerIDBearing.html">VerIDBearing</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bearing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Requested face bearing or nil to return all images regardless of their face bearing</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Array of image URLs</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@VerID@objc(cs)VerIDSessionResult(py)imageURLs"></a>
+                    <a name="//apple_ref/swift/Property/imageURLs" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VerID@objc(cs)VerIDSessionResult(py)imageURLs">imageURLs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>URLs of images collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">imageURLs</span><span class="p">:</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5VerID0A15IDSessionResultC16detectedBearingss3SetVyAA0A9IDBearingOGv"></a>
+                    <a name="//apple_ref/swift/Property/detectedBearings" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5VerID0A15IDSessionResultC16detectedBearingss3SetVyAA0A9IDBearingOGv">detectedBearings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set of face bearings collected in the session</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">detectedBearings</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt"><a href="../Enums/VerIDBearing.html">VerIDBearing</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Applied Recognition, Inc.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
