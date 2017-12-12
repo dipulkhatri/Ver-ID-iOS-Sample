@@ -302,13 +302,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VerID * _Non
 ///
 /// \param keepForRecognition Set to <code>false</code> unless you are planning to use the face for operations that require face recognition like registration or authentication.
 ///
+/// \param strictBearingMatching Set to <code>true</code> if you anticipate using the face for face recognition where the face must match the bearing of the registered face. This is used for example in sessions that use <code>strict</code> liveness detection level.
+///
 /// \param callback The block to execute when the face detection completes
 ///
-- (void)detectFaceInImage:(UIImage * _Nonnull)image keepForRecognition:(BOOL)keepForRecognition callback:(void (^ _Nonnull)(VerIDFace * _Nullable))callback;
+- (void)detectFaceInImage:(UIImage * _Nonnull)image keepForRecognition:(BOOL)keepForRecognition withStrictBearingMatching:(BOOL)strictBearingMatching callback:(void (^ _Nonnull)(VerIDFace * _Nullable))callback;
 /// Detect faces in the supplied UIImage. The function will block until the detection completes. Should be called on a background queue.
 /// \param image The image in which to detect faces
 ///
 /// \param keepForRecognition Set to <code>false</code> unless you are planning to use the face for operations that require face recognition like registration or authentication.
+///
+/// \param strictBearingMatching Set to <code>true</code> if you anticipate using the face for face recognition where the face must match the bearing of the registered face. This is used for example in sessions that use <code>strict</code> liveness detection level.
 ///
 ///
 /// throws:
@@ -316,7 +320,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VerID * _Non
 ///
 /// returns:
 /// Detected face
-- (VerIDFace * _Nullable)detectFaceInImage:(UIImage * _Nonnull)image keepForRecognition:(BOOL)keepForRecognition error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (VerIDFace * _Nullable)detectFaceInImage:(UIImage * _Nonnull)image keepForRecognition:(BOOL)keepForRecognition withStrictBearingMatching:(BOOL)strictBearingMatching error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 @end
 
 /// Anti-spoofing methods
