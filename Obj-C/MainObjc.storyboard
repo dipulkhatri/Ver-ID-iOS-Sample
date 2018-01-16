@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="364" y="847"/>
         </scene>
-        <!--Ver-ID Sample-->
+        <!--Person SDK Sample-->
         <scene sceneID="E0W-7p-uUe">
             <objects>
                 <viewController storyboardIdentifier="start" id="aLw-7g-YcI" customClass="MainViewController" customModule="VerIDSampleObjc" sceneMemberID="viewController">
@@ -338,14 +338,14 @@
                                 <include reference="IeE-AL-mNv"/>
                                 <exclude reference="lln-7E-eRL"/>
                                 <exclude reference="pjQ-4z-E9M"/>
-                                <exclude reference="o2S-bB-lg5"/>
                                 <include reference="1F3-6x-wOz"/>
-                                <include reference="hBa-eo-vlA"/>
                                 <exclude reference="dpH-Ns-2va"/>
+                                <include reference="hBa-eo-vlA"/>
+                                <exclude reference="o2S-bB-lg5"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Ver-ID Sample" id="its-4V-fBb">
+                    <navigationItem key="navigationItem" title="Person SDK Sample" id="its-4V-fBb">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Hk6-Fo-TRY"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

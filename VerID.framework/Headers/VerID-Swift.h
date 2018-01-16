@@ -200,6 +200,14 @@ SWIFT_CLASS("_TtC5VerID11EulerAngleF")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS("_TtC5VerID8FaceUtil")
+@interface FaceUtil : NSObject
++ (NSNumber * _Nullable)compareTemplate:(NSArray<NSNumber *> * _Nonnull)t1 to:(NSArray<NSNumber *> * _Nonnull)t2 error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIImage;
 @class FBFace;
 @class PHAsset;
@@ -212,7 +220,6 @@ SWIFT_CLASS("_TtC5VerID9ImageUtil")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSNumber;
 
 SWIFT_CLASS("_TtC5VerID7SDKAuth")
 @interface SDKAuth : NSObject
@@ -285,6 +292,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VerID * _Non
 /// returns:
 /// registered users
 - (NSArray<VerIDUser *> * _Nullable)registeredVerIDUsersAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Compare two faces to each other
+/// \param face1 First face to compare to second face
+///
+/// \param face2 Second face to compare to first face
+///
+///
+/// throws:
+/// Exception if the call fails
+///
+/// returns:
+/// NSNumber with a floating point integer comparison score ranging between 0 (different) and 1 (same)
+- (NSNumber * _Nullable)compareFace:(VerIDFace * _Nonnull)face1 to:(VerIDFace * _Nonnull)face2 error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+/// Compare two faces to each other
+/// \param face1 First face to compare to second face
+///
+/// \param face2 Second face to compare to first face
+///
+/// \param callback Callback that returns either a NSNumber with a floating point integer comparison score ranging between 0 (different) and 1 (same) or error if the call fails
+///
+- (void)compareFace:(VerIDFace * _Nonnull)face1 to:(VerIDFace * _Nonnull)face2 callback:(void (^ _Nonnull)(NSNumber * _Nullable, NSError * _Nullable))callback;
+- (NSNumber * _Nullable)compareFaceTemplate:(NSArray<NSNumber *> * _Nonnull)template1 to:(NSArray<NSNumber *> * _Nonnull)template2 error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (VerIDFace * _Nullable)faceInImage:(CGImageRef _Nonnull)image error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
 /// Deregister the user and delete the associated account. Subsequent attempts to authenticate as this user will fail.
 /// \param userId The user to deregister
 ///
