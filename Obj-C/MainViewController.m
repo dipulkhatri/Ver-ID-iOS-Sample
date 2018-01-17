@@ -130,7 +130,7 @@
     VerIDAuthenticationSessionSettings *settings = [[VerIDAuthenticationSessionSettings alloc] initWithUserId:[VerIDUser defaultUserId] livenessDetection:VerIDLivenessDetectionRegular];
     [settings setShowGuide:YES];
     [settings setShowResult:YES];
-    [settings setRequiredNumberOfSegments:requiredPoseCount + 1];
+    [settings setNumberOfResultsToCollect:requiredPoseCount + 1];
     VerIDAuthenticationSession *session = [[VerIDAuthenticationSession alloc] initWithSettings:settings];
     [session setDelegate:self];
     [session start];
