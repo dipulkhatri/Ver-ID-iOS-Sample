@@ -217,7 +217,7 @@
 					};
 					3B86D1C41DF5756A001DC977 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = CSD8L9EK66;
+						DevelopmentTeam = RUCW3WX3G9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -441,7 +441,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CSD8L9EK66;
+				DEVELOPMENT_TEAM = RUCW3WX3G9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -450,7 +450,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Obj-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appliedrec.VerIDSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.2keys.TCPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -460,7 +460,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CSD8L9EK66;
+				DEVELOPMENT_TEAM = RUCW3WX3G9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -469,7 +469,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Obj-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appliedrec.VerIDSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.2keys.TCPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
